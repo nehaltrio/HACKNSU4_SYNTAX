@@ -1,0 +1,156 @@
+*{
+    margin:0;
+    padding:0;
+    font-family: 'DynaPuff', cursive;
+}
+body{
+    background-image: url(/images/bg.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    opacity: 2;
+    overflow: hidden;
+}
+.header{
+    margin-top:20px;
+}
+.header h1{
+    text-transform: uppercase;
+    font-size: 50px;
+}
+.header p{
+    text-transform: uppercase;
+    font-size: 30px;
+}
+
+.header span{
+    display: inline-block;
+    height: 3px;
+    width:100%;
+    background:black;
+    position: relative;
+    
+
+}
+.header span::before{
+content: "";
+position: absolute;
+background: #2d3950;
+width: 50px;
+height: 5px;
+top: 50%;
+transform: translateY(-50%);
+left: 0;
+animation: loading 20s linear infinite;
+}
+@keyframes loading{
+  0%{
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+  }
+  50%{
+    top: 50%;
+    transform: translateY(-50%);
+    left: 92%;
+  }
+  100%{
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+  }
+}
+
+.section{
+   align-items: center;
+}
+.banner{
+     align-items: center;
+     margin-top:40px;
+     padding:10px;
+}
+.banner button{
+  width:200px;
+  height:30px;
+  border:none;
+  outline:none;
+  cursor: pointer;
+  box-sizing: border-box;
+  font-size:15px;
+  color:#333;
+  margin-bottom:40px;
+  border-radius: 25px;
+}
+.banner2{
+  align-items: center;
+  margin-top:40px;
+  margin-left:230%;
+  padding:10px;
+}
+.banner2 button{
+  width:200px;
+  height:30px;
+  border:none;
+  outline:none;
+  cursor: pointer;
+  box-sizing: border-box;
+  font-size:15px;
+  color:#333;
+  margin-bottom:40px;
+  border-radius: 25px;
+}
+
+.main{
+  text-align: center;
+  margin-top:60px;
+}
+.main input, button{
+  width:300px;
+  height:40px;
+  border:none;
+  outline:none;
+  padding-left:40px;
+  box-sizing: border-box;
+  font-size:15px;
+  color:#333;
+  margin-bottom:40px;
+  border-radius: 25px;
+}
+.main button{
+  padding-left: 0;
+  background-color: rgb(191, 161, 105);
+  letter-spacing: 1px;
+  font-weight: bold;
+  margin-bottom: 70px;
+  border-radius: 25px;
+}
+.main button:hover{
+  box-shadow: 2px 2px 2px 5px #555;
+  background-color: #ddd;
+}
+.main span{
+  position:relative;
+}
+.footer{
+  
+}
+.foot{
+  margin-right:60px;
+}
+.foot button{
+  padding-left: 0;
+  background-color: rgb(71, 14, 14);
+  letter-spacing: 1px;
+  font-weight: bold;
+  margin-bottom: 70px;
+  border-radius: 25px;
+  margin-left:40%;
+  color:#fff;
+
+}
+.foot button:hover{
+  box-shadow: 2px 2px 2px 5px #555;
+  background-color: #ddd;
+  color:black;
+}
