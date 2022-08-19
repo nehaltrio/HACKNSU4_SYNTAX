@@ -1,0 +1,67 @@
+body{
+    font-family: 'DynaPuff', cursive;
+    background-image: url(/templates/bus_owner/images/bg_picture.jpg);
+    background-repeat: no-repeat;
+    overflow: hidden;
+    background-size: cover;
+}
+.container{
+    width:380px;
+    margin: 7% auto;
+    background: rgba( 255, 255, 255, 0.25 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+.header{
+    text-align:center;
+    padding-top:75px;
+}
+.header h1{
+    color:#333;
+    font-size: 75px;
+    margin-bottom:80px;
+}
+.main{
+    text-align: center;
+}
+.main input, button{
+    width:300px;
+    height:40px;
+    border:none;
+    outline:none;
+    padding-left:40px;
+    box-sizing: border-box;
+    font-size:15px;
+    color:#333;
+    margin-bottom:40px;
+}
+
+.main input{
+    border-radius: 10px;
+}
+
+.main button{
+    padding-left: 0;
+    background-color: rgb(224, 186, 116);
+    letter-spacing: 1px;
+    font-weight: bold;
+    margin-bottom: 70px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.main button:hover{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.main span{
+    position:relative;
+}
+.main i{
+    position:absolute;
+    left:15px;
+    color:#333;
+    font-size:16px;
+    top:2px;
+}

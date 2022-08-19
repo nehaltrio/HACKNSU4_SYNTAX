@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--fontawesome-->
+    <script src="https://kit.fontawesome.com/edb1ca6fb8.js" crossorigin="anonymous"></script>
+    <!--google fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400;500&display=swap" rel="stylesheet">
+    <title>Bus Owner Registration</title>
+    <link rel="stylesheet" th:href="@{/templates/bus_owner/bus_owner_reg.css}">
+</head>
+<body>
+<div class="container">
+    <div class="heading">Bus Owner Registration</div>
+    <form th:action="@{/bus_owner_registration_process}" th:object="${bus_owner}"
+          method="post">
+        <div class="card-details">
+            <div class="card-box">
+                <span class="details">Full Name</span>
+                <input type="text" th:field="*{busOwnerName}" placeholder="Enter your name">
+            </div>
+
+            <div class="card-box">
+                <span class="details">NID</span>
+                <input type="number" th:field="*{busOwnerNid}" placeholder="Enter your NID number">
+            </div>
+
+            <div class="card-box">
+                <span class="details">Bus Name</span>
+                <input type="text" th:field="*{busName}" placeholder="Enter the bus name">
+            </div>
+
+            <div class="card-box">
+                <span class="details">Email</span>
+                <input type="email" th:field="*{busOwnerEmail}" placeholder="Enter your email">
+            </div>
+
+            <div class="card-box">
+                <span class="details">Password</span>
+                <input type="password" th:field="*{busOwnerPass}" placeholder="Enter your password">
+            </div>
+
+            <!--                <div class="card-box">-->
+            <!--                    <span class="details">Confirm Password</span>-->
+            <!--                    <input type="password" placeholder="Confirm password">-->
+            <!--                </div>-->
+            <div class="button">
+                <input type="submit" value="Register">
+            </div>
+        </div>
+    </form>
+</div>
+
+
+</body>
+</html>

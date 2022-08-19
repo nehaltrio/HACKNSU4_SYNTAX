@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p th:text="${owner.getBusOwnerName()}"></p>
+<form th:action="@{/bus_info_update_process}" th:object="${bus}"
+      method="post">
+    <div class="card-details">
+        <div class="card-box">
+            <span class="details">Bus Name</span>
+            <input type="text" th:field="*{busName}" placeholder="Enter Bus Name">
+        </div>
+
+        <div class="card-box">
+            <span class="details">Bus Number</span>
+            <input type="text" th:field="*{busNumber}" placeholder="Enter Bus Number">
+        </div>
+
+        <div class="card-box">
+            <span class="details">Bus Driver</span>
+            <input type="text" th:field="*{busDriver}" placeholder="Enter Bus Driver">
+        </div>
+
+        <div class="card-box">
+            <span class="details">Bus Helper</span>
+            <input type="text" th:field="*{busHelper}" placeholder="Enter Bus Helper">
+        </div>
+
+
+        <div class="button">
+            <input type="submit" value="Upload">
+        </div>
+    </div>
+</form>
+
+</body>
+</html>

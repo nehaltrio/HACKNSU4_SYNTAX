@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:action="@{/genrateQRCode}"
+      method="post">
+
+    <div class="card-box">
+        <span class="details">Bus Name</span>
+        <input type="text" name="busName" placeholder="Enter the bus name">
+    </div>
+
+    <div class="button">
+        <input type="submit" value="Generate QR">
+    </div>
+</form>
+
+</body>
+</html>
