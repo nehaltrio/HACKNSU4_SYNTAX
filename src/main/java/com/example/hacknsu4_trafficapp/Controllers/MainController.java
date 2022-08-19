@@ -146,4 +146,17 @@ public class MainController {
         return "feedbackindex.html";
     }
 
+    @GetMapping("/post_feed")
+    public String postFeed(){
+        return String
+    }
+
+
+    @RequestMapping("/feed_process")
+    public String feedProcess() {
+
+
+        return "tableindex.html";
+    }
+
 }
