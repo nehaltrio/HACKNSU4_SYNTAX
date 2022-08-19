@@ -120,15 +120,30 @@ public class MainController {
     }
 
     @GetMapping("/portal")
-    public String viewPortalPage(){
+    public String viewPortalPage(Model model , PostDetails postDetails){
+        model.addAttribute("feed", postDetails);
         return "portal";
     }
 
 
     @RequestMapping("/proccess_portal")
-    public String launchPortalResult(){
+    public String launchPortalResult(PostDetails postDetails){
+        postDetailsRepo.save(postDetails);
+        return "redirect:/portal";
+    }
 
-        return "portal";
+    @RequestMapping("/feed")
+    public String feedback(Model model){
+        List<PostDetails> list = postDetailsRepo.findDetails();
+        model.addAttribute("feed", list);
+        return "feedbackindex";
+    }
+
+    @GetMapping("/bus_home")
+    public String viewBusHome(Model model, @AuthenticationPrincipal BusOwnerDetails busOwnerDetails){
+        BusOwner busOwner = busOwnerRepo.find_bus_owner(busOwnerDetails.getUsername());
+        model.addAttribute("bus_owner", busOwner);
+        return "busownerportal";
     }
 
 
@@ -137,26 +152,6 @@ public class MainController {
         BusOwner busOwner = busOwnerRepo.find_bus_owner(busOwnerDetails.getUsername());
         model.addAttribute("busowner", busOwner);
         return "busownerportal";
-    }
-
-    @GetMapping("/feed")
-    public String viewFeedbackPage(Model model){
-       List<PostDetails> list =  postDetailsRepo.findAll();
-        model.addAttribute("feedback",list);
-        return "feedbackindex.html";
-    }
-
-    @GetMapping("/post_feed")
-    public String postFeed(){
-        return String
-    }
-
-
-    @RequestMapping("/feed_process")
-    public String feedProcess() {
-
-
-        return "tableindex.html";
     }
 
 }

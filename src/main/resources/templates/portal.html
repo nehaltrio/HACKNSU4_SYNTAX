@@ -11,49 +11,49 @@
     <script src="https://kit.fontawesome.com/edb1ca6fb8.js" crossorigin="anonymous"></script>
     <!--google fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400;500&display=swap" rel="stylesheet">
 
 
 </head>
 <body>
-<form type="#">
-  <div class="container">
-    <div class="row">
-      <div class="card-details">
-      <div class="col-md-6">
-          <div class="card-box">
-              <input type="text" required placeholder="Enter your name" name="user_name">
-          </div>
-      </div>
-      
-      <div class="col-md-6">
-          <div class="card-box">
-              <input type="text" required placeholder="Enter the bus name" name="busName">
-      </div>
-    </div>
-  </div>
-    </div>
-      </div>
-
-
-      <section>
-        <div class="container">
-          <div class="row">
-            <div class="card-details2">
-              <div class="col-md-6 align-item:center">
-                <div class="card-box2">
-                <textarea name="feedback" id="" class="form-control mb-3" placeholder="Message*" cols="80" rows="20" required></textarea>
-                <button type="submit">Submit</button> 
+<form th:action="@{/proccess_portal}"  th:object="${feed}" method="post" >
+    <div class="container">
+        <div class="row">
+            <div class="card-details">
+                <div class="col-md-6">
+                    <div class="card-box">
+                        <input type="text" placeholder="Enter your name" th:field="*{user_name}">
+                    </div>
                 </div>
-              </div>
+
+                <div class="col-md-6">
+                    <div class="card-box">
+                        <input type="text" placeholder="Enter the bus name" th:field="*{busName}">
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </section>
-      
- </form>
-  
+    </div>
+
+
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="card-details2">
+                    <div class="col-md-6 align-item:center">
+                        <div class="card-box2">
+                            <textarea name="" id="" th:field="*{feedback}" class="form-control mb-3" placeholder="Message*" cols="80" rows="20" required></textarea>
+                            <button type="submit">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</form>
+
 
 </body>
 </html>
