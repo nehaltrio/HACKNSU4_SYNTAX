@@ -1,0 +1,81 @@
+*{
+    margin:0;
+    padding:0;
+    font-family: 'DynaPuff', cursive;
+}
+
+body{
+    background-image: url(../images/bg.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    
+}
+ .card-details .card-box{
+    width:calc(100% / 2 - 20px);
+    margin-bottom: 15px;
+    margin-top: 15px;
+    margin-left: 15px;
+}
+.card-details .card-box .details{
+    display:block;
+    font-weight:500;
+    margin-bottom: 5px;
+}
+.card-details .card-box input{
+    height:45px;
+    width:100%;
+    outline:black;
+    border-radius: 5px;
+    background-color: transparent;
+    border: 5px solid black;
+    padding-left: 15px;
+    font-size: 16px;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+}
+.card-details2 .card-box2{
+    margin-top: 100px;
+    margin-left: 450px;
+}
+ .card-details2 .card-box2 textarea{
+
+    background-color: transparent;
+    
+    font-size: 14px;
+        
+    font-weight: 700;
+        
+    letter-spacing: 1px;
+        
+    height: 67%;
+        
+    padding: 15px 10px;
+        
+    border: 5px solid black;
+}
+
+.card-details2 .card-box2 button{
+    
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    font-weight: 300;
+    font-size: 12px;
+    background-color: rgb(56, 53, 53);
+    border-radius: 5px;
+    align-items: center;
+    margin-left:350px;
+    margin-top: 50px;
+    cursor: pointer;
+}
+
+.card-details2 .card-box2 button:hover{
+    background-color: #fff;
+    color:black;
+}
+
+input ::placeholder{
+    color:white;
+}
