@@ -4,15 +4,12 @@
     font-family: 'DynaPuff', cursive;
 }
  body{
-    background-image: url(/images/bg.jpg);
+    background-image: url(/bg.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     height:100vh;
-    
 }
-
-
 
 td{
     margin-left: 5%;

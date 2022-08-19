@@ -1,12 +1,7 @@
-
-
-
 *{
     margin:0;
     padding:0;
     font-family: 'DynaPuff', cursive;
-    
-   
 }
 
 .navbar-light .navbar-nav .nav-link {
@@ -15,18 +10,15 @@
     font-size: 14px;
     text-transform: uppercase;
     font-family: Lato;
-    
 }
+
 body{
-    background-image: url(../images/bg.jpg);
+    background-image: url(/bg.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     height: 100vh;
-   
 }
-
-
 
 .container-fluid button {
     background: rgb(191, 161, 105);

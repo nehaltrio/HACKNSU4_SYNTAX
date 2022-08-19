@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bus-Table</title>
-    <link rel="stylesheet" href="css/tablestyle.css">
+    <link rel="stylesheet" th:href="@{/tablestyle.css}">
     <!--fontawsome-->
     <script src="https://kit.fontawesome.com/edb1ca6fb8.js" crossorigin="anonymous"></script>
     <!--google fonts-->
@@ -24,131 +25,13 @@
                           <th>Bus</th>
                           <th>Root</th>
                         </tr>
-                        <tr>
-                          <td>Lorem ipsum dolor </td>
-
-                          <td>Lorem ipsum dolor sit amet.</td>
-                          
-                        </tr>
-                       
-                        <tr>
-                          <td>Lorem ipsum dolor </td>
-
-                          <td>Lorem ipsum dolor sit amet.</td>
-                          
+                        <tr th:each="p: ${busList}">
+                            <td th:text="${p.BusName}"></td>
+                            <td th:text="${p.BusRoute}"></td>
                         </tr>
                        
 
-                        <tr>
-                          <td>Lorem ipsum dolor </td>
 
-                          <td>Lorem ipsum dolor sit amet.</td>
-                          
-                        </tr>
-                       
-
-                        <tr>
-                          <td>Lorem ipsum dolor </td>
-
-                          <td>Lorem ipsum dolor sit amet.</td>
-                          
-                        </tr>
-                       
-
-                        <tr>
-                          <td>Lorem ipsum dolor </td>
-
-                          <td>Lorem ipsum dolor sit amet.</td>
-                          
-                        </tr>
-                       
-
-                        <tr>
-                          <td>Lorem ipsum dolor </td>
-
-                          <td>Lorem ipsum dolor sit amet.</td>
-                          
-                        </tr>
-                       
-
-                        <tr>
-                          <td>Lorem ipsum dolor </td>
-
-                          <td>Lorem ipsum dolor sit amet.</td>
-                          
-                        </tr>
-                       
-
-                        <tr>
-                          <td>Lorem ipsum dolor </td>
-
-                          <td>Lorem ipsum dolor sit amet.</td>
-                          
-                        </tr>
-                       
-
-                        <tr>
-                          <td>Lorem ipsum dolor </td>
-
-                          <td>Lorem ipsum dolor sit amet.</td>
-                          
-                        </tr>
-                       
-
-                        <tr>
-                          <td>Lorem ipsum dolor </td>
-
-                          <td>Lorem ipsum dolor sit amet.</td>
-                          
-                        </tr>
-                       
-
-                        <tr>
-                          <td>Lorem ipsum dolor </td>
-
-                          <td>Lorem ipsum dolor sit amet.</td>
-                          
-                        </tr>
-                       
-
-                        <tr>
-                          <td>Lorem ipsum dolor </td>
-
-                          <td>Lorem ipsum dolor sit amet.</td>
-                          
-                        </tr>
-                       
-
-                        <tr>
-                          <td>Lorem ipsum dolor </td>
-
-                          <td>Lorem ipsum dolor sit amet.</td>
-                          
-                        </tr>
-                       
-
-                        <tr>
-                          <td>Lorem ipsum dolor </td>
-
-                          <td>Lorem ipsum dolor sit amet.</td>
-                          
-                        </tr>
-                       
-
-                        <tr>
-                          <td>Lorem ipsum dolor </td>
-
-                          <td>Lorem ipsum dolor sit amet.</td>
-                          
-                        </tr>
-                       
-
-                        <tr>
-                          <td>Lorem ipsum dolor </td>
-
-                          <td>Lorem ipsum dolor sit amet.</td>
-                          
-                        </tr>
                        
                       </table>
 

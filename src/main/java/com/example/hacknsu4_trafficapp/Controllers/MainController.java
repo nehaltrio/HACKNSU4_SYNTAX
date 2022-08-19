@@ -41,11 +41,6 @@ public class MainController {
     @Autowired
     BusRouteRepo busRouteRepo;
 
-    @GetMapping("/")
-    public String viewLandingPage() {
-        return "index";
-    }
-
     @GetMapping("/bus_owner/login")
     public String viewBusOwnerLoginPage() {
         return "bus_owner/bus_owner_login";
@@ -111,9 +106,8 @@ public class MainController {
         return new BufferedImageHttpMessageConverter();
     }
 
-    @GetMapping("/bus")
+    @GetMapping("/")
     public String findBusByLocation() {
-        System.out.println("RUN BUS");
         return "index.html";
     }
 
@@ -126,7 +120,12 @@ public class MainController {
 
         model.addAttribute("busList", busRouteList);
 
-        return "result.html";
+        return "tableindex.html";
+    }
+
+    @GetMapping("/portal")
+    public String viewPortalPage(){
+        return "portal";
     }
 
 }
