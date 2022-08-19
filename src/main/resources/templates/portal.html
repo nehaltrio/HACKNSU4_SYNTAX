@@ -17,33 +17,33 @@
 
 </head>
 <body>
-
+<form th:action="@{/proccess_portal}"  th:object="${feed}" method="post" >
   <div class="container">
     <div class="row">
       <div class="card-details">
       <div class="col-md-6">
           <div class="card-box">
-              <input type="text required" placeholder="Enter your name">
+              <input type="text" placeholder="Enter your name" th:field="*{user_name}">
           </div>
       </div>
       
       <div class="col-md-6">
           <div class="card-box">
-              <input type="text required" placeholder="Enter the bus name">
+              <input type="text" placeholder="Enter the bus name" th:field="*{busName}">
       </div>
     </div>
   </div>
     </div>
       </div>
 
-    <form type="#">
+
       <section>
         <div class="container">
           <div class="row">
             <div class="card-details2">
               <div class="col-md-6 align-item:center">
                 <div class="card-box2">
-                <textarea name="" id="" class="form-control mb-3" placeholder="Message*" cols="80" rows="20" required></textarea>
+                <textarea name="" id="" th:field="*{feedback}" class="form-control mb-3" placeholder="Message*" cols="80" rows="20" required></textarea>
                 <button type="submit">Submit</button> 
                 </div>
               </div>

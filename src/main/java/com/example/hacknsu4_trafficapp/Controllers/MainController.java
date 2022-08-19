@@ -1,13 +1,7 @@
 package com.example.hacknsu4_trafficapp.Controllers;
 
-import com.example.hacknsu4_trafficapp.Models.Bus;
-import com.example.hacknsu4_trafficapp.Models.BusOwner;
-import com.example.hacknsu4_trafficapp.Models.GetRequiredBus;
-import com.example.hacknsu4_trafficapp.Models.Route;
-import com.example.hacknsu4_trafficapp.Repositories.BusOwnerRepo;
-import com.example.hacknsu4_trafficapp.Repositories.BusQrRepo;
-import com.example.hacknsu4_trafficapp.Repositories.BusRepo;
-import com.example.hacknsu4_trafficapp.Repositories.BusRouteRepo;
+import com.example.hacknsu4_trafficapp.Models.*;
+import com.example.hacknsu4_trafficapp.Repositories.*;
 import com.example.hacknsu4_trafficapp.SecurityConfigs.BusOwnerDetails;
 import com.example.hacknsu4_trafficapp.Utills.QRCodeGenerator;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,6 +34,9 @@ public class MainController {
 
     @Autowired
     BusRouteRepo busRouteRepo;
+
+    @Autowired
+    PostDetailsRepo postDetailsRepo;
 
     @GetMapping("/bus_owner/login")
     public String viewBusOwnerLoginPage() {
@@ -123,16 +120,30 @@ public class MainController {
     }
 
     @GetMapping("/portal")
-    public String viewPortalPage(){
+    public String viewPortalPage(Model model , PostDetails postDetails){
+        model.addAttribute("feed", postDetails);
         return "portal";
     }
 
     @RequestMapping("/proccess_portal")
-    public String launchPortalResult(){
-
-        return "portal";
+    public String launchPortalResult(PostDetails postDetails){
+        postDetailsRepo.save(postDetails);
+        return "redirect:/portal";
     }
 
+    @RequestMapping("/feed")
+    public String feedback(Model model){
+        List<PostDetails> list = postDetailsRepo.findDetails();
+        model.addAttribute("feed", list);
+        return "feedbackindex";
+    }
+
+    @GetMapping("/bus_home")
+    public String viewBusHome(Model model, @AuthenticationPrincipal BusOwnerDetails busOwnerDetails){
+        BusOwner busOwner = busOwnerRepo.find_bus_owner(busOwnerDetails.getUsername());
+        model.addAttribute("bus_owner", busOwner);
+        return "busownerportal";
+    }
 
 
 

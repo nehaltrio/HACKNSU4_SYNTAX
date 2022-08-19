@@ -6,6 +6,6 @@ import org.springframework.data.jpa.repository.Query;
 
 public interface BusRepo extends JpaRepository<Bus,Long> {
 
-    @Query(value = "from Bus where busName = ?1")
+    @Query(value = "from Bus where busNumber = ?1")
     Bus findBus(String busName);
 }

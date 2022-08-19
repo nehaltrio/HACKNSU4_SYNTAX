@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400;500&display=swap" rel="stylesheet">
   <title>Feedback</title>
-  <link rel="stylesheet" href="css/feedbackstyle.css">
+  <link rel="stylesheet" th:href="@{/feedback.css}">
   <link rel="stylesheet" href="css/animate.css">
 </head>
 <body>
@@ -29,14 +30,14 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <button>Sign in</button>
+                <a class="btn btn-alert" th:href="@{/bus_owner/login}" >Sign in</a>
               </li>
               <li class="nav-item">
-                <button>Sign up</button>
+                <a class="btn btn-alert" th:href="@{/bus_owner_register}">Sign up</a>
               </li>
 
               <li class="nav-item">
-                <button>Feedback Portal</button>
+                <a class="btn btn-alert"  th:href="@{/portal.html}" >Feedback Portal</a>
               </li>
 
               <li class="nav-item">
@@ -58,26 +59,20 @@
 </header>
 
 <body>
-<div class="container2 wow flash">
+<div class="container2 wow flash" th:each="a:${feed}">
   <div class="header">
-    <h1>Username</h1>
+    <h1 th:text="${a.getUser_name()}"></h1>
 
   </div>
 
   <div class="header">
-    <h1>Busname</h1>
+    <h1 th:text="${a.getBusName()}"></h1>
 
   </div>
   <div class="main">
-    <form>
                   <span>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut corporis possimus explicabo qui voluptatum voluptatem,
-                      rem quam sequi ipsa! Esse quisquam dolor laboriosam enim totam impedit hic optio a consequatur.
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum laudantium tempore alias sunt at officia
-                      impedit porro assumenda sequd facilis pariatur iste ducimus vitae, magnam earum aut asperiores? Quidem, beatae.</p>
+                    <p th:text="${a.getFeedback()}"></p>
                   </span><br>
-
-    </form>
   </div>
 </div>
 
