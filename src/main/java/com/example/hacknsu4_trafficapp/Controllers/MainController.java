@@ -70,10 +70,6 @@ public class MainController {
         return "bus_owner/bus_owner_login";
     }
 
-//    @GetMapping("/bus_owner_home")
-//    public String showBusOwnerHome() {
-//        return "bus_owner/bus_owner_home";
-//    }
 
 
     @GetMapping("/bus_info")
@@ -118,7 +114,7 @@ public class MainController {
     @GetMapping("/bus")
     public String findBusByLocation() {
         System.out.println("RUN BUS");
-        return "bus.html";
+        return "index.html";
     }
 
     @RequestMapping("/searchBus")
