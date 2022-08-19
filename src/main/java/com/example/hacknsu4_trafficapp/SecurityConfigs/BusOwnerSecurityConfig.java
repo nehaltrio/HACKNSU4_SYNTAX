@@ -52,7 +52,7 @@ public class BusOwnerSecurityConfig extends WebSecurityConfigurerAdapter {
                 .loginPage("/bus_owner/login")
                 .usernameParameter("email")
                 .loginProcessingUrl("/bus_owner/login")
-                .defaultSuccessUrl("/bus_info")
+                .defaultSuccessUrl("/bus_owner_home")
                 .permitAll()
                 .and()
                 .logout().logoutUrl("/bus_owner/logout")

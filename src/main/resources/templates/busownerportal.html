@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,7 +14,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400;500&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="css/busownerportalstyle.css">
+    <link rel="stylesheet" th:href="@{busownerportalstyle.css}">
     <title>Owner Profile</title>
 
 </head>
@@ -23,8 +23,8 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="header">
-                    <h1>Bus Name</h1>
-                    <p>Bus Owner Name</p>
+                    <h1 th:text="${busowner.getBusOwnerName()}"></h1>
+                    <p th:text="${busowner.getBusName()}"></p>
                     <span></span>
                 </div>
             </div>
@@ -36,12 +36,12 @@
             <div class="row">
                 <div class="col-md-3">
                     <div class="banner">
-                        <button>Bus Data Input</button>
+                        <a th:href="@{/bus_info}">Bus Data Input</a>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="banner2">
-                        <button>Feedback</button>
+                        <a >Feedback</a>
                     </div>
                 </div>
             </div>
@@ -53,14 +53,12 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="main">
-                        <form>
+                        <form th:action="@{/genrateQRCode}" method="post">
                             <span>
-                                <input type="text" placeholder ="Enter bus-number" name="">
-            
+                                <input type="text" placeholder ="Enter bus-number" name="busName">
                             </span>
                             <br>
-                        
-                            <button>Generate QR Code</button>
+                            <button type="submit">Generate QR Code</button>
                         </form>
                     </div>
                 </div>

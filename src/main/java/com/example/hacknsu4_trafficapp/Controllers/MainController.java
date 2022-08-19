@@ -1,13 +1,7 @@
 package com.example.hacknsu4_trafficapp.Controllers;
 
-import com.example.hacknsu4_trafficapp.Models.Bus;
-import com.example.hacknsu4_trafficapp.Models.BusOwner;
-import com.example.hacknsu4_trafficapp.Models.GetRequiredBus;
-import com.example.hacknsu4_trafficapp.Models.Route;
-import com.example.hacknsu4_trafficapp.Repositories.BusOwnerRepo;
-import com.example.hacknsu4_trafficapp.Repositories.BusQrRepo;
-import com.example.hacknsu4_trafficapp.Repositories.BusRepo;
-import com.example.hacknsu4_trafficapp.Repositories.BusRouteRepo;
+import com.example.hacknsu4_trafficapp.Models.*;
+import com.example.hacknsu4_trafficapp.Repositories.*;
 import com.example.hacknsu4_trafficapp.SecurityConfigs.BusOwnerDetails;
 import com.example.hacknsu4_trafficapp.Utills.QRCodeGenerator;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,6 +34,9 @@ public class MainController {
 
     @Autowired
     BusRouteRepo busRouteRepo;
+
+    @Autowired
+    PostDetailsRepo postDetailsRepo;
 
     @GetMapping("/bus_owner/login")
     public String viewBusOwnerLoginPage() {
@@ -127,6 +124,7 @@ public class MainController {
         return "portal";
     }
 
+
     @RequestMapping("/proccess_portal")
     public String launchPortalResult(){
 
@@ -134,6 +132,18 @@ public class MainController {
     }
 
 
+    @GetMapping("bus_owner_home")
+    public String busOwnerHome(@AuthenticationPrincipal BusOwnerDetails busOwnerDetails, Model model){
+        BusOwner busOwner = busOwnerRepo.find_bus_owner(busOwnerDetails.getUsername());
+        model.addAttribute("busowner", busOwner);
+        return "busownerportal";
+    }
 
+    @GetMapping("/feed")
+    public String viewFeedbackPage(Model model){
+       List<PostDetails> list =  postDetailsRepo.findAll();
+        model.addAttribute("feedback",list);
+        return "feedbackindex.html";
+    }
 
 }
