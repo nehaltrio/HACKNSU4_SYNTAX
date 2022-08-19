@@ -20,24 +20,24 @@ body{
     height: 100vh;
 }
 
-.container-fluid button {
-    background: rgb(191, 161, 105);
-    border: 1px solid #fff;
-    color: #fff;
-    padding: 15px;
-    font-size: 20px;
-    border-radius: 7px;
-    margin-top: 15px;
-    margin-bottom: 15px;
-    transition: .4s all ease-in-out;
-    margin-right: 10px;
-    
-}
-.container-fluid button:hover{
-    color:rgb(191, 161, 105);
-    background:#fff;
-    border:1px solid rgb(191, 161, 105);
-}
+/*.container-fluid a {*/
+/*    background: rgb(191, 161, 105);*/
+/*    border: 1px solid #fff;*/
+/*    color: #fff;*/
+/*    padding: 15px;*/
+/*    font-size: 20px;*/
+/*    border-radius: 7px;*/
+/*    margin-top: 15px;*/
+/*    margin-bottom: 15px;*/
+/*    transition: .4s all ease-in-out;*/
+/*    margin-right: 10px;*/
+/*    */
+/*}*/
+/*.container-fluid a:hover{*/
+/*    color:rgb(191, 161, 105);*/
+/*    background:#fff;*/
+/*    border:1px solid rgb(191, 161, 105);*/
+/*}*/
 .container-fluid .btn-alert{
     background: rgb(167, 44, 44);
     border: 1px solid #fff;
@@ -52,6 +52,17 @@ body{
 }
 .container-fluid .btn-alert:hover{
     color:rgb(167, 44, 44);
+    background:#fff;
+    border:1px solid rgb(191, 161, 105);
+}
+
+.clr{
+    color: white;
+    background-color: rgb(191, 161, 105);
+}
+
+.clr:hover{
+    color:rgb(191, 161, 105);
     background:#fff;
     border:1px solid rgb(191, 161, 105);
 }

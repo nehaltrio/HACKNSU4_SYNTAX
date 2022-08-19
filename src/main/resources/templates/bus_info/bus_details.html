@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" th:href="@{/businfo.css}">
 </head>
 <body>
-<p th:text="${owner.getBusOwnerName()}"></p>
 <form th:action="@{/bus_info_update_process}" th:object="${bus}"
       method="post">
     <div class="card-details">

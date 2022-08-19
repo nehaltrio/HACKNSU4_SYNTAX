@@ -1,6 +1,6 @@
 body{
     font-family: 'DynaPuff', cursive;
-    background-image: url(/templates/bus_owner/images/bg_picture.jpg);
+    background-image: url(/bg.jpg);
     background-repeat: no-repeat;
     overflow: hidden;
     background-size: cover;
@@ -21,7 +21,7 @@ body{
 }
 .header h1{
     color:#333;
-    font-size: 75px;
+    font-size: 60px;
     margin-bottom:80px;
 }
 .main{

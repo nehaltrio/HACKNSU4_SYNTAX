@@ -93,7 +93,6 @@ public class MainController {
         bus = busRepo.findBus(busName);
         String codeText = bus.toString();
 
-
         return okResponse(QRCodeGenerator.getQRCodeImage(codeText));
     }
 
@@ -127,5 +126,14 @@ public class MainController {
     public String viewPortalPage(){
         return "portal";
     }
+
+    @RequestMapping("/proccess_portal")
+    public String launchPortalResult(){
+
+        return "portal";
+    }
+
+
+
 
 }

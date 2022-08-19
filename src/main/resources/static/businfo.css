@@ -70,6 +70,7 @@ form .card-details .card-box{
 form .button{
     text-align: center;
     align-items: center;
+
 }
 form .button input {
     padding: 10px 0;
@@ -84,6 +85,7 @@ form .button input {
     border-radius: 5px;
     letter-spacing: 1px;
     background: rgb(191, 161, 105);
+    cursor: pointer;
 }
 form .button input:hover{
     box-shadow: 2px 2px 2px 5px #555;
