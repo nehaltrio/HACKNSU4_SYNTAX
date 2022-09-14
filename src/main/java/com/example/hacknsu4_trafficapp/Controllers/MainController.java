@@ -154,6 +154,5 @@ public class MainController {
         return "busownerportal";
     }
     
-    //test
 
 }
